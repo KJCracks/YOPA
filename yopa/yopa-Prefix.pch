@@ -1,0 +1,10 @@
+//
+// Prefix header for all source files of the 'yopa' target in the 'yopa' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+#   define FILE_NAME (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__) // shortened path of __FILE__ is there is one
+#define DebugLog(M, ...) NSLog(@"\033[0;32m[YOPA]\033[0m | %s:%d | %@\n", FILE_NAME, __LINE__, [NSString stringWithFormat:M, ##__VA_ARGS__]);
